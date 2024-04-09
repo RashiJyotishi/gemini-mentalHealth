@@ -1,0 +1,103 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+.block {
+    background-image: url(./images/for_index.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0px;
+    height: 500px;
+    margin-top: 0px;
+}
+
+.information {
+    height: 700px;
+    padding-top: 6rem;
+}
+
+body {
+    background-color: rgb(250, 197, 205);
+    color: rgb(247, 96, 118);
+    /* color: #03779e; */
+    /* color: rgb(247, 108, 132); */
+}
+
+.wel {
+    font-size: 3rem;
+    /* margin-top: 11rem; */
+    text-align: left;
+    margin-left: 7rem;
+    font-weight: 900;
+}
+
+.info {
+    height: 7rem;
+    width: 40rem;
+    color: rgb(92, 91, 91);
+    font-size: 1.5rem;
+    margin-left: 8rem;
+    margin-top: 1rem;
+}
+
+.explo {
+    text-align: left;
+    margin-left: 22rem;
+    margin-top: 2rem;
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.box {
+    border: none;
+    width: 23%;
+    height: 300px;
+    background-color: white;
+}
+
+.box1-top {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1.75rem;
+    border: none;
+}
+
+.box-heading {
+    padding-bottom: 1rem;
+}
+
+.box-content {
+    margin: 0.9rem;
+    justify-content: space-around;
+    /* height: 400 px; */
+}
+
+#box-name {
+    font-size: 1.7rem;
+}
+
+.box1-middle {
+    display: flex;
+    padding-bottom: 2rem;
+}
+
+.box1-bottom {
+    color: #007185;
+    justify-content: flex-end;
+    font-size: small;
+}
+
+.box1-bottom:hover {
+    color: orangered;
+}
+
+.DPs {
+    /* padding-bottom: 2.9rem; */
+    width: 268.9;
+    height: 200px;
+}

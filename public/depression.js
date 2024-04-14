@@ -1,33 +1,21 @@
 const Data = [
     {
-        question : "Trouble falling asleep, staying asleep, or sleeping too much?:",
-        a: "Yes",
-        b: "No"
+        question : "Trouble falling asleep, staying asleep, or sleeping too much?:"
     },
     {
-        question : "Feeling down, depressed, or hopeless?",
-        a: "Yes",
-        b: "No"
+        question : "Feeling down, depressed, or hopeless?"
     },
     {
-        question : "Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?",
-        a: "Yes",
-        b: "No"
+        question : "Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?"
     },
     {
-        question : "Trouble concentrating on things, such as reading the newspaper or watching television?",
-        a: "Yes",
-        b: "No"
+        question : "Trouble concentrating on things, such as reading the newspaper or watching television?"
     },
     {
-        question : "Thoughts that you would be better off dead, or of hurting yourself?:",
-        a: "Yes",
-        b: "No"
+        question : "Thoughts that you would be better off dead, or of hurting yourself?:"
     },
     {
-        question : "Feeling bad about yourself - or that you are a failure or have let yourself or your family down?:",
-        a: "Yes",
-        b: "No"
+        question : "Feeling bad about yourself - or that you are a failure or have let yourself or your family down?:"
     },
 ]
 
@@ -50,7 +38,7 @@ const quizDetailEL = document.querySelector(".quiz-details");
 
 const sendBtn = document.getElementById('btn');
 
-let currentQuiz = 1;
+let currentQuiz = 0;
 let score = 0;
 
 LoadQuiz();
@@ -92,7 +80,7 @@ sendBtn.addEventListener("click",()=>{
     unselect();
 
     // quizDetailEL.innerHTML = `<div></div>`
-    quizDetailEL.innerText = currentQuiz + " of 5 questions";
+    quizDetailEL.innerText = (currentQuiz+1) + " of 6 questions";
     if(currentQuiz<(Data.length)){
         LoadQuiz();
     }else{

@@ -35,6 +35,9 @@ app.get("/",(req, res) => {
 app.get("/depression",(req, res) => {
   res.render("depression.ejs")
 });
+app.get("/anxiety",(req, res) => {
+  res.render("anxiety.ejs")
+});
 
 app.get("/another",(req, res) => {
   const response = ""; // Example response data

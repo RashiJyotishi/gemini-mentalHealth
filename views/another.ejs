@@ -9,14 +9,11 @@
 <body>
     <div class="chat-history">
       <!-- <%  %> -->
-      <% if (response) { %>
+      <% messageHistory.forEach(message => { %>
         <div class="message">
-          <% if(!(response ==="")){ %>
-            <p style="font-size: 23px;">Dr. Dreamy Doodles: <%= response %></p>
-            <% } %>
+          <p style="font-size: 23px;"><%= message.sender %>: <%= message.message %></p>
         </div>
-        <br>
-      <% } %>
+      <% }); %>
     </div>
 
     <div class="chat-form-container" >
@@ -38,12 +35,7 @@
     <!-- <script src="dist/bundle.js"></script> -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/dotenv@latest/dist/dotenv.js"></script> -->
     <!-- dist/dotenv.js -->
-    <script src="./gemini_streaming.js" type="importmap">
-        {
-            "imports": {
-              "@google/generative-ai": "https://esm.run/@google/generative-ai"
-            }
-          }
+    <script src="./gemini_streaming.js">
     </script>
 </body>
 </html>

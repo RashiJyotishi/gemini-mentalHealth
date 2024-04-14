@@ -23,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const genAI = new GoogleGenerativeAI(process.env.API_key);
+let messageHistory = [];
 
 app.get("/",(req, res) => {
   res.render("index.ejs")
@@ -30,10 +31,10 @@ app.get("/",(req, res) => {
 
 app.get("/another",(req, res) => {
   const response = ""; // Example response data
-  res.render("another", { response }); 
-  res.render("another");
+  // res.render("another", { response });
+  res.render('another', { messageHistory }); 
+  // res.render("another");
 });
-
 
 //   function displayMessage(sender, message) {
 //     const messageHTML = `
@@ -53,10 +54,16 @@ app.get("/another",(req, res) => {
 //   },
 // });
 
+
   app.post('/blogs', async (req, res) => {
     // let isAwaitingResponse = false;
     const userMessage = req.body.message.trim(); 
     const aiResponse = await sendMessage(userMessage);
+    messageHistory.push({ sender: 'You', message: userMessage });
+  messageHistory.push({ sender: 'Dr. Dreamy Doodles', message: aiResponse });
+  
+  // Render the 'another' template with the message history
+  res.render('another', { messageHistory });
   //  res.send(aiResponse);
   res.render('another', { response: aiResponse });
   //   askAndRespond(userMessage);

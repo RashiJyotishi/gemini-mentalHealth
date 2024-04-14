@@ -3,7 +3,7 @@
 }
 body{
     /* background-color:  rgb(250, 197, 205); */
-    background-image: url(./gem-images/mind.png);
+    background-image: url(/images/mind.png);
     background-size: cover;
     background-repeat: no-repeat;
     /* margin-left: 9rem; */

@@ -5,7 +5,7 @@
 }
 
 .block {
-    background-image: url(./images/for_index.webp);
+    background-image: url(/images/for_index.webp);
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0px;

@@ -1,0 +1,63 @@
+*{
+    border: border-box;
+}
+body{
+    /* background-color:  rgb(250, 197, 205); */
+    background-image: url(./gem-images/mind.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* margin-left: 9rem; */
+    margin-top: 3rem;
+}
+.chat-history{
+    height: 31rem;
+    width: 60rem;
+    background-color: transparent;
+    color: black;
+    overflow-y: auto;
+    display: flex;
+    flex-direction:column;
+    margin-left: 9.75rem;
+    /* justify-content: center; */
+    
+}
+
+.chat-form-container {
+    width: 75%; /* Adjust width as needed */
+    margin-top: 1.5rem; /* Adjust margin top as needed */
+    margin-right: auto; /* Adjust margin right as needed */
+    margin-bottom: auto; /* Adjust margin bottom as needed */
+    margin-left: auto; /* Adjust margin left as needed */
+    padding: 1rem; /* Adjust padding as needed */
+    /* background-color: #ffffff; //Background color */
+    background-color: transparent;
+    border-radius: 0.75rem; /* Rounded corners */
+  }
+  
+  .chat-form-container form {
+    display: flex; /* Use flexbox */
+  }
+  
+  .chat-input {
+    flex: 1; /* Take remaining space */
+    margin-right: 0.75rem; /* Adjust margin right as needed */
+    padding: 0.75rem; /* Adjust padding as needed */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 0.5rem; /* Rounded corners */
+    font-size: 21px;
+  }
+  
+  .send {
+    padding: 0.75rem 1.5rem; /* Adjust padding as needed */
+    border: none; /* Remove border */
+    border-radius: 0.5rem; /* Rounded corners */
+    background-color: rgb(247, 96, 118); /* Background color */
+    color: #ffffff; /* Text color */
+    cursor: pointer; /* Cursor style */
+    font-size: 18px;
+  }
+  
+  .send:hover {
+    background-color: rgb(245, 82, 107); /* Background color on hover */
+  }
+  

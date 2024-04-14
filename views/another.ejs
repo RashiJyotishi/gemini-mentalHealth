@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat with your personalized doctor</title>
+    <link rel="stylesheet" href="gem.css">
+</head>
+<body>
+    <div class="chat-history">
+      <!-- <%  %> -->
+      <% if (response) { %>
+        <div class="message">
+          <% if(!(response ==="")){ %>
+            <p style="font-size: 23px;">Dr. Dreamy Doodles: <%= response %></p>
+            <% } %>
+        </div>
+        <br>
+      <% } %>
+    </div>
+
+    <div class="chat-form-container" >
+      <form method="POST" action="/blogs" class="flex" id="chatForm">
+        <input type="text" name="message" class="chat-input" id="chat-input" placeholder="Your message ..." id="chat-message-input">
+        <button type="submit" class="send" id="send">Submit</button>
+      </form>
+    </div>
+        
+    <!-- </div> -->
+
+    <!-- <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script> -->
+    <!-- <script src="dist/bundle.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/dotenv@latest/dist/dotenv.js"></script> -->
+    <!-- dist/dotenv.js -->
+    <script src="./gemini_streaming.js" type="importmap">
+        {
+            "imports": {
+              "@google/generative-ai": "https://esm.run/@google/generative-ai"
+            }
+          }
+    </script>
+</body>
+</html>

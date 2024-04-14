@@ -10,6 +10,8 @@ const PORT = 8000;
 
 dotenv.config();
 
+//some strict mime type checking was enabled so used below code to tell .js is actually javascript code
+
 app.use(express.static('public',{ 
   setHeaders: (res, path, stat) => {
       if (path.endsWith('.js')) {
@@ -27,6 +29,11 @@ let messageHistory = [];
 
 app.get("/",(req, res) => {
   res.render("index.ejs")
+});
+
+
+app.get("/depression",(req, res) => {
+  res.render("depression.ejs")
 });
 
 app.get("/another",(req, res) => {

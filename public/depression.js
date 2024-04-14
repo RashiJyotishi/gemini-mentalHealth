@@ -48,8 +48,6 @@ const questionEL = document.getElementById("question");
 const footerEL = document.querySelector('.quiz-footer');
 const quizDetailEL = document.querySelector(".quiz-details");
 
-const a_txt = document.getElementById('a_text');
-const b_txt = document.getElementById('b_text');
 const sendBtn = document.getElementById('btn');
 
 let currentQuiz = 1;
@@ -57,15 +55,12 @@ let score = 0;
 
 LoadQuiz();
 const demo = select();
-console.log(select);
+// console.log(select);
 unselect();
 
 function LoadQuiz(){
     const currentQuizData = Data[currentQuiz]
-    // console.log(currentQuizData);
     questionEL.innerText = currentQuizData.question;
-    a_txt.innerText = currentQuizData.a;
-    b_txt.innerText = currentQuizData.b;
 }
 
 function unselect(){
@@ -79,7 +74,7 @@ function select(){
     let answer;
     answerEL.forEach((answerEL)=>{
         if(answerEL.checked){
-            console.log(answerEL.id);
+            // console.log(answerEL.id);
             answer = answerEL.id
         }
     });
@@ -98,7 +93,7 @@ sendBtn.addEventListener("click",()=>{
 
     // quizDetailEL.innerHTML = `<div></div>`
     quizDetailEL.innerText = currentQuiz + " of 5 questions";
-    if(currentQuiz<Data.length){
+    if(currentQuiz<(Data.length)){
         LoadQuiz();
     }else{
         if(score===0){

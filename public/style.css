@@ -50,6 +50,7 @@ body {
 
 .boxes {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
@@ -100,4 +101,83 @@ body {
     /* padding-bottom: 2.9rem; */
     width: 268.9;
     height: 200px;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 600px ){
+    .box{
+        /* display: flex;
+        justify-content: space-evenly; */
+        width: 45%;
+    }
+}
+
+
+@media screen and (max-width: 800px ){
+    .info{
+        width: 500px;
+    }
+    .information{
+        height:900px;
+    }
+    .explo{
+        margin-top: 6rem;
+    }
+}
+
+
+@media screen and (max-width: 653px ){
+    .info{
+        width: 300px;
+    }
+    .boxes{
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 460px ){
+    .info{
+        /* display: flex;
+        justify-content: space-evenly; */
+        width: 100px;
+    }
+}
+
+
+@media screen and (max-width: 1296px ){
+    .gemini{
+        width: 210px;
+    }
+    .DPs{
+        width: 210px;
+    }
+    .anxiety{
+        width: 210px;
+    }
+    .gen_info{
+        width: 210px;
+    }
+}
+
+@media screen and (max-width: 1006px ){
+    .gemini{
+        width: 150px;
+    }
+    .DPs{
+        width: 150px;
+    }
+    .anxiety{
+        width: 150px;
+    }
+    .gen_info{
+        width: 150px;
+    }
+}
+
+
+@media screen and (max-width: 745px ){
+    .box1{
+        width: 50%;
+    }
 }

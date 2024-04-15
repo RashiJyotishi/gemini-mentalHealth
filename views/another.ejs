@@ -8,7 +8,6 @@
 </head>
 <body>
     <div class="chat-history">
-      <!-- <%  %> -->
       <% messageHistory.forEach(message => { %>
         <div class="message">
           <p style="font-size: 23px;"><%= message.sender %>: <%= message.message %></p>
@@ -22,19 +21,6 @@
         <button type="submit" class="send" id="send">Submit</button>
       </form>
     </div>
-        
-    <!-- </div> -->
-
-    <!-- <script type="importmap">
-        {
-          "imports": {
-            "@google/generative-ai": "https://esm.run/@google/generative-ai"
-          }
-        }
-      </script> -->
-    <!-- <script src="dist/bundle.js"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/dotenv@latest/dist/dotenv.js"></script> -->
-    <!-- dist/dotenv.js -->
     <script src="./gemini_streaming.js">
     </script>
 </body>

@@ -61,3 +61,10 @@ body{
     background-color: rgb(245, 82, 107); /* Background color on hover */
   }
   
+
+
+@media screen and (max-width: 745px ){
+  .body{
+    display: none;
+  }
+}

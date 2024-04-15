@@ -40,30 +40,9 @@ app.get("/anxiety",(req, res) => {
 });
 
 app.get("/another",(req, res) => {
-  const response = ""; // Example response data
-  // res.render("another", { response });
   res.render('another', { messageHistory }); 
   // res.render("another");
 });
-
-//   function displayMessage(sender, message) {
-//     const messageHTML = `
-//       <div class="message">
-//         <p style="font-size: 23px;">${sender}: ${message}</p>
-//       </div>
-//       <br>
-//     `;
-//     return messageHTML;
-//   }
-// const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-
-// const chat = model.startChat({
-//   history: [],
-//   generationConfig: {
-//     maxOutputTokens: 500,
-//   },
-// });
-
 
   app.post('/blogs', async (req, res) => {
     // let isAwaitingResponse = false;
@@ -73,60 +52,15 @@ app.get("/another",(req, res) => {
   messageHistory.push({ sender: 'Dr. Dreamy Doodles', message: aiResponse });
   
   // Render the 'another' template with the message history
-  res.render('another', { messageHistory });
-  //  res.send(aiResponse);
-  res.render('another', { response: aiResponse });
-  //   askAndRespond(userMessage);
-
-  // async function sendMessage(userMessage) {
-  //   try {
-  //     const result = await chat.sendMessageStream(userMessage);
-  //     let text = "";
-  //     for await (const chunk of result.stream) {
-  //       const chunkText = await chunk.text();
-  //       text += chunkText;
-  //     }
-  //     return text;
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //     return null;
-  //   }
-  // }
-
-  // async function askAndRespond(userMessage) {
-  //   if (!isAwaitingResponse) {
-  //     if (userMessage.toLowerCase() === "exit") {
-  //       return;
-  //     }
-  //     isAwaitingResponse = true;
-  //     try {
-  //       displayMessage("You", userMessage);
-
-  //       const aiResponse = await sendMessage(userMessage);
-
-  //       displayMessage("Dr. Dreamy Doodles", aiResponse);
-  //     } catch (error) {
-  //       console.error("Error:", error);
-  //     }
-  //     isAwaitingResponse = false;
-  //   } else {
-  //     console.log("Please wait for the current response to complete");
-  //   }
-  // }
-
-    // Extract message from request body
-    // Call askAndRespond function with userMessage
-    // askAndRespond(userMessage);
-    
-    // Send response (optional)
-    // res.send('Message received');
+  res.setHeader('Content-Type', 'text/plain');
+  // res.render('another', { messageHistory });
+   res.send(aiResponse);
+  // res.render('another', { response: aiResponse });
   });
 
-// }
-
-// run();
-
 async function sendMessage(userMessage) {
+  // alert(JSON.stringify(message));
+  // console.log(userMessage);
   const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
   const chat = model.startChat({
     history: [],
@@ -138,9 +72,10 @@ async function sendMessage(userMessage) {
   try {
     let text = '';
     const result = await chat.sendMessageStream(userMessage);
+    // console.log(result);
     for await (const chunk of result.stream) {
       const chunkText = await chunk.text();
-      text += chunkText;
+      text += ((chunkText.replace(/\*/g, ''))+'\n');
     }
     return text;
   } catch (error) {

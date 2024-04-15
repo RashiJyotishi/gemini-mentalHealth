@@ -17,8 +17,8 @@ sendBtn.addEventListener('click', async (event) => {
   });
 
   if (response.ok) {
-    // Display the server response in the chat history
     const message = await response.text();
+    console.log(message);
     displayMessage('Dr. Dreamy Doodles', message);
   } else {
     console.error('Failed to fetch AI response');

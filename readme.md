@@ -42,3 +42,6 @@ Below is the link for live deployment of the project.
 
 https://mind-well.onrender.com
 
+## link to the video:
+
+https://drive.google.com/file/d/1LmkXdtlRhozpj81uUuY0zTaUCb4CEQRF/view?usp=drive_link

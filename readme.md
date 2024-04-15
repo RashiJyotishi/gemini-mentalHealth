@@ -12,8 +12,6 @@ For this project, you'll need Node.js, Express.js, HTML, CSS, and JavaScript.
 
 To setup the development environment you need node, npm , express, ejs .
 
-## Installations
-
 
 ## Reports
 

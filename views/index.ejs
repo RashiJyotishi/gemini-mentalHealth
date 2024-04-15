@@ -14,8 +14,8 @@
             <!-- <div class="dep">symptoms of depression among adults aged 18 and over</div> -->
             <!-- https://www.cdc.gov/nchs/products/databriefs/db379.htm -->
             <div class="explo">
-                <a href="https://www.who.int/health-topics/mental-health#tab=tab_1" target="">Explore more</a>
-                <!-- <a href="./views/home.ejs">server side render</a> -->
+                <button class="explore-button" onclick="window.location.href='https://www.who.int/health-topics/mental-health#tab=tab_1'">Explore More</button>
+
             </div>
         </div>    
     </div>
@@ -30,8 +30,7 @@
                 <div class="content">
                     <img src="images/depression-new.png" alt="depression" class="DPs">
                 </div>
-                <!-- <button type="button" class="dep">more options</button> -->
-                <a href="/depression" class="box1-bottom">See more</a>
+                <button class="button" onclick="window.location.href='/depression'">Take Test</button>
             </div>
         </div>
     
@@ -44,7 +43,7 @@
                 <div class="content">
                     <img src="images/anxiety-new.png" alt="anxiety" class="anxiety">
                 </div>
-                <a href="/anxiety" class="box1-bottom">See more</a>
+                <button class="button" onclick="window.location.href='/anxiety'">Take Test</button>
             </div>
         </div>
     
@@ -56,7 +55,8 @@
                 <div class="content">
                     <img src="images/chat_bot.png" alt="gemini" class="gemini">
                 </div>
-                <a href="/another" class="box1-bottom">See more</a>
+                <!-- <a href="/another" class="box1-bottom">See more</a> -->
+                <button class="button" onclick="window.location.href='/another'">Consult</button>
             </div>
         </div>
     
@@ -69,10 +69,9 @@
                 <div class="content">
                     <img src="images/stress_free.png" alt="be happy , be calm" class="gen_info">
                 </div>
-                <a href="#" class="box1-bottom">See more</a>
+                <button class="button" onclick="window.location.href='https://www.nimh.nih.gov/health/find-help'">Find Help</button>
             </div>
         </div>
     </div>
-    <!-- <script src="./script.js"></script> -->
 </body>
 </html>

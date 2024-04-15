@@ -2,7 +2,6 @@ import express from 'express';
 import path from 'path';
 import dotenv from "dotenv";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-// const express = require('express')
 
 const app = express();
 app.set("view engine", "ejs");
@@ -35,32 +34,26 @@ app.get("/",(req, res) => {
 app.get("/depression",(req, res) => {
   res.render("depression.ejs")
 });
+
 app.get("/anxiety",(req, res) => {
   res.render("anxiety.ejs")
 });
 
 app.get("/another",(req, res) => {
   res.render('another', { messageHistory }); 
-  // res.render("another");
 });
 
   app.post('/blogs', async (req, res) => {
-    // let isAwaitingResponse = false;
     const userMessage = req.body.message.trim(); 
     const aiResponse = await sendMessage(userMessage);
     messageHistory.push({ sender: 'You', message: userMessage });
   messageHistory.push({ sender: 'Dr. Dreamy Doodles', message: aiResponse });
   
-  // Render the 'another' template with the message history
   res.setHeader('Content-Type', 'text/plain');
-  // res.render('another', { messageHistory });
    res.send(aiResponse);
-  // res.render('another', { response: aiResponse });
   });
 
 async function sendMessage(userMessage) {
-  // alert(JSON.stringify(message));
-  // console.log(userMessage);
   const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
   const chat = model.startChat({
     history: [],
@@ -72,7 +65,6 @@ async function sendMessage(userMessage) {
   try {
     let text = '';
     const result = await chat.sendMessageStream(userMessage);
-    // console.log(result);
     for await (const chunk of result.stream) {
       const chunkText = await chunk.text();
       text += ((chunkText.replace(/\*/g, ''))+'\n');
@@ -88,4 +80,3 @@ async function sendMessage(userMessage) {
 app.listen(PORT, ()=> {
   console.log(`Server is running on port ${PORT}`)
 })
-// another one script.js

@@ -36,4 +36,9 @@ The main feature of this project is the use of the Gemini API key and creating a
 
 Initial goal was to integrate openAI API for the AI therapist feature, but techincal issues led to explore different alternatives. So I worked on gemini API and then came real challenge to make the server and configure GET and POST requests.
 
+## Try It Out:
+
+Below is the link for live deployment of the project.
+
+https://mind-well.onrender.com
 

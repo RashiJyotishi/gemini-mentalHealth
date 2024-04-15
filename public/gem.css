@@ -2,69 +2,106 @@
     border: border-box;
 }
 body{
-    /* background-color:  rgb(250, 197, 205); */
-    background-image: url(/images/mind.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* margin-left: 9rem; */
-    margin-top: 3rem;
+    background-color: #f0f0f0;
+    padding: 18px;
+    margin: 0;
 }
 .chat-history{
-    height: 31rem;
-    width: 60rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 18px;
+  box-sizing: border-box; 
     background-color: transparent;
     color: black;
     overflow-y: auto;
     display: flex;
     flex-direction:column;
-    margin-left: 9.75rem;
-    /* justify-content: center; */
     
 }
 
+#chatForm{
+  width: 80%;
+}
+
 .chat-form-container {
-    width: 75%; /* Adjust width as needed */
-    margin-top: 1.5rem; /* Adjust margin top as needed */
-    margin-right: auto; /* Adjust margin right as needed */
-    margin-bottom: auto; /* Adjust margin bottom as needed */
-    margin-left: auto; /* Adjust margin left as needed */
-    padding: 1rem; /* Adjust padding as needed */
-    /* background-color: #ffffff; //Background color */
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+    width: 95%;
+    margin-top: auto;
+    margin-right: auto;
+    transform: translateX(-50%); 
+    margin-left: auto;
+    padding: 14px;
     background-color: transparent;
-    border-radius: 0.75rem; /* Rounded corners */
+    border-radius: 0.75rem;
   }
   
   .chat-form-container form {
-    display: flex; /* Use flexbox */
+    display: flex;
+    /* width: 100%; */
   }
-  
+
+  .home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.home-button:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s ease-in-out;
+}
+#chatForm {
+  width: 80%; 
+  margin: 0 auto;
+  margin-right: 4px;
+}
+
   .chat-input {
-    flex: 1; /* Take remaining space */
-    margin-right: 0.75rem; /* Adjust margin right as needed */
-    padding: 0.75rem; /* Adjust padding as needed */
-    border: 1px solid #ccc; /* Border */
-    border-radius: 0.5rem; /* Rounded corners */
+    flex: 1;
+    margin-right: 5px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
     font-size: 21px;
+    resize: vertical;
   }
   
   .send {
-    padding: 0.75rem 1.5rem; /* Adjust padding as needed */
-    border: none; /* Remove border */
-    border-radius: 0.5rem; /* Rounded corners */
-    background-color: rgb(247, 96, 118); /* Background color */
-    color: #ffffff; /* Text color */
-    cursor: pointer; /* Cursor style */
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgb(247, 96, 118);
+    color: #ffffff;
+    cursor: pointer;
     font-size: 18px;
   }
   
   .send:hover {
-    background-color: rgb(245, 82, 107); /* Background color on hover */
+    background-color: rgb(241, 48, 77);
   }
   
-
+/* media queries */
 
 @media screen and (max-width: 745px ){
   .body{
     display: none;
   }
+}
+
+@media screen and (max-width: 500px) {
+  #chatForm {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 ;
+}
+
 }

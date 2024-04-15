@@ -87,3 +87,47 @@ body{
 .quiz-footer button:hover{
     opacity: 1;
 }
+
+.home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.home-button:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s ease-in-out;
+}
+  
+
+
+@media screen and (max-width: 480px) {
+    .quiz-header {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .quiz-body h2 {
+        font-size: 1.5rem;
+    }
+
+    .quiz-body ul li {
+        font-size: 0.9rem;
+    }
+
+    .quiz-footer {
+        padding: 0.5rem 1rem;
+    }
+
+    .quiz-footer button {
+        padding: 0.5rem 1rem;
+    }
+}

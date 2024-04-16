@@ -44,4 +44,4 @@ https://mind-well.onrender.com
 
 ## link to the video:
 
-https://drive.google.com/file/d/1LmkXdtlRhozpj81uUuY0zTaUCb4CEQRF/view?usp=drive_link
+https://drive.google.com/file/d/18Co41KyT7v24Mq14Iw1MCH7p0qGe5rtu/view?usp=drive_link

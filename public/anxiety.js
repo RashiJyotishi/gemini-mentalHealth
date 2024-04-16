@@ -82,7 +82,7 @@ sendBtn.addEventListener("click",()=>{
     unselect();
 
     // quizDetailEL.innerHTML = `<div></div>`
-    quizDetailEL.innerText = (currentQuiz+1) + " of 5 questions";
+    quizDetailEL.innerText = (currentQuiz+1) + " of 6 questions";
     if(currentQuiz<Data.length){
         LoadQuiz();
     }else{

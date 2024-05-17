@@ -40,7 +40,7 @@ Initial goal was to integrate openAI API for the AI therapist feature, but techi
 
 Below is the link for live deployment of the project.
 
-https://mind-well.onrender.com
+https://mindwell.onrender.com
 
 ## link to the video:
 

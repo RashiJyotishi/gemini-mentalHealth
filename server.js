@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import dotenv from "dotenv";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { DiffieHellmanGroup } from 'crypto';
 
 const app = express();
 app.set("view engine", "ejs");
@@ -24,7 +25,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const genAI = new GoogleGenerativeAI(process.env.API_key);
-let messageHistory = [];
+// let messageHistory = [];
+let chat;
 
 app.get("/",(req, res) => {
   res.render("index.ejs")
@@ -39,7 +41,27 @@ app.get("/anxiety",(req, res) => {
   res.render("anxiety.ejs")
 });
 
-app.get("/another",(req, res) => {
+//start chat session
+async function startChat(){
+  const model = await genAI.getGenerativeModel({model: 'gemini-pro'});
+  chat = model.startChat({
+    history: [],
+    generationConfig: {
+      maxOutputTokens: 500,
+    },
+  });
+}
+
+startChat();
+
+let messageHistory = [];
+
+app.get("/another",async (req, res) => {
+  const aiMessage = "Hello, It's your psycologist here. How can I help you?"
+  const userMessage = "please behave as a physocologist and your name is Dr. Dreamy Doodles. If anyone ask you that who are you then answer that I'm Doctor Dreamy Doodles and I'm you psycologist. If any one ask some thing like what do you do then reply that I help people recover their mental health. "
+  const airesp = await sendMessage(userMessage);
+  console.log(airesp);
+  messageHistory.push({ sender: 'Dr. Dreamy Doodles', message: aiMessage})
   res.render('another', { messageHistory }); 
 });
 
@@ -47,26 +69,19 @@ app.get("/another",(req, res) => {
     const userMessage = req.body.message.trim(); 
     const aiResponse = await sendMessage(userMessage);
     messageHistory.push({ sender: 'You', message: userMessage });
-  messageHistory.push({ sender: 'Dr. Dreamy Doodles', message: aiResponse });
+    messageHistory.push({ sender: 'Dr. Dreamy Doodles', message: aiResponse });
   
-  res.setHeader('Content-Type', 'text/plain');
-   res.send(aiResponse);
+    res.setHeader('Content-Type', 'text/plain');
+    res.send(aiResponse);
   });
 
 async function sendMessage(userMessage) {
-  const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
-  const chat = model.startChat({
-    history: [],
-    generationConfig: {
-      maxOutputTokens: 500,
-    },
-  });
 
   try {
     let text = '';
     const result = await chat.sendMessageStream(userMessage);
     for await (const chunk of result.stream) {
-      const chunkText = await chunk.text();
+      const chunkText = chunk.text();
       text += ((chunkText.replace(/\*/g, ''))+'\n');
     }
     return text;

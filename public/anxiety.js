@@ -43,7 +43,7 @@ let currentQuiz = 0;
 let score = 0;
 
 LoadQuiz();
-const demo = select();
+// const demo = select();
 // console.log(select);
 unselect();
 

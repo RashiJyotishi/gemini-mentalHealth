@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "/home/rashijyotishi/dev/JS/gemini+ejs+mindwell/MindWell/server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": " node server.js"
@@ -10,7 +11,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
+  
   "dependencies": {
     "@google/generative-ai": "^0.5.0",
     "cheerio": "^1.0.0-rc.12",

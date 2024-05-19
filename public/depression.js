@@ -21,8 +21,9 @@ const Data = [
 
 const responses = [
     {
-        Results: "You appear to have minimal symptoms of depression. Your results indicate that you have none, or very few signs of depression. These results are not meant to be a diagnosis. You can meet with a doctor or therapist to get a diagnosis and/or access therapy or medications. Sharing these results with someone you trust can be a great place to start"},
-    {
+        Results: "You appear to have minimal symptoms of depression. Your results indicate that you have none, or very few signs of depression. These results are not meant to be a diagnosis. You can meet with a doctor or therapist to get a diagnosis and/or access therapy or medications. Sharing these results with someone you trust can be a great place to start"
+    },
+    { 
         Results: "You may be experiencing mild symptoms of depression. Consider seeking support.Your responses indicate that you may be at risk of harming yourself. If you need immediatehelp, you can reach the Suicide & Crisis Lifeline by calling or texting 988 or using thechat box at 988lifeline.org. You can also text “MHA” to 741-741 to reach the Crisis TextLine. Warmlines are an excellent place for non-crisis support."
     },
     {

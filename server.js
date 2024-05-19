@@ -6,7 +6,7 @@ import { DiffieHellmanGroup } from 'crypto';
 
 const app = express();
 app.set("view engine", "ejs");
-const PORT = 8000;
+const PORT = 3000;
 
 dotenv.config();
 
@@ -32,6 +32,26 @@ app.get("/",(req, res) => {
   res.render("index.ejs")
 });
 
+app.get('/contact', (req, res) => {
+  res.render('contact');
+});
+
+app.get('/feedback', (req, res) => {
+  res.render('feedback');
+});
+
+// Store feedback messages in an array
+let feedbackList = [];
+
+app.post('/feedback', (req, res) => {
+  const feedbackMessage = req.body.message.trim();
+  feedbackList.push(feedbackMessage);
+  res.redirect('/'); // Redirect to homepage after submitting feedback
+});
+
+app.get('/services', (req, res) => {
+  res.render('services');
+});
 
 app.get("/depression",(req, res) => {
   res.render("depression.ejs")
